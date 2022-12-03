@@ -1,0 +1,5 @@
+venv/
+Dockerfile
+.env
+fly.toml
+*/db.sqlite3
