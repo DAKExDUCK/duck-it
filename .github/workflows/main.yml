@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Notify about commit or pull request
     runs-on: ubuntu-latest
     steps:
       - name: send telegram message on push
