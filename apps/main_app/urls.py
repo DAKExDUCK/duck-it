@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('contact_us/', include('contact_us.urls')),
     path('accounts/', include('accounts.urls')),
-    path('articles/', include('articles.urls')),
+    path('courses/', include('courses.urls')),
 
     path('admins/', include('admins.urls')),
 ]

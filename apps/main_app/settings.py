@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'accounts',
     'admins',
     'crispy_forms',
-    'articles',
+    'courses',
+
+    'taggit',
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'main_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'duck_it',
+        'USER': 'admin',
+        'PASSWORD': 'MZNC2BPkVg6O',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
