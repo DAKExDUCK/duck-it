@@ -1,5 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
+
 
 STATUS = (
     (2,"On Review"),
@@ -25,6 +27,7 @@ class Course(models.Model):
 
 class Lesson(models.Model):
     title = models.CharField(max_length=200)
+    body = CKEditor5Field('Text', config_name='extends')
 
     slug = models.SlugField(null=False, unique=True)
     order = models.PositiveIntegerField(default=None)

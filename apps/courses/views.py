@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView
+from bs4 import BeautifulSoup
 
 from .models import Course, Lesson
 
