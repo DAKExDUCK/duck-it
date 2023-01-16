@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'main_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'duck_it',
-        'USER': 'admin',
-        'PASSWORD': 'MZNC2BPkVg6O',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 
