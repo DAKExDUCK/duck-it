@@ -33,8 +33,9 @@ INSTALLED_APPS = [
 
     'accounts',
     'admins',
-    'crispy_forms',
     'courses',
+
+    'crispy_forms',
 
     'taggit',
     'django_ckeditor_5'
