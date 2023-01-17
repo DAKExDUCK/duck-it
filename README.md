@@ -27,16 +27,38 @@ $ source venv/bin/activate
 
 ### Windows
 
-Will be later
+1. Clone the repository:
+
+```sh
+git clone https://github.com/DAKExDUCK/duck-it.git
+cd duck-it
+```
+
+2. Create venv and activate it:
+
+```sh
+python -m venv venv
+venv\Scripts\activate.bat
+```
+
+3. Then install the dependencies:
+
+```sh
+(venv) pip install -r requirements.txt
+```
 
 
 ## Migrations
 
-1. Install mysql server and start it
 
 2. Create `secret_key`
+#### Linux:
 ```sh
-python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+$ python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+#### Windows:
+```sh
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
 3. Create `.env` file

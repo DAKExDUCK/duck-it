@@ -1,6 +1,7 @@
 venv/
 Dockerfile
 .env
+.idea/
 fly.toml
 */db.sqlite3
 **/__pycache__/**
