@@ -52,7 +52,7 @@ DB_PORT="port"
 
 4. Make migrations
 ```sh
-python manage.py makemigrations
+python manage.py migrate
 ```
 
 5. Create super user
