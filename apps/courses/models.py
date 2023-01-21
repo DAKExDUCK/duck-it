@@ -11,15 +11,19 @@ STATUS = (
     (-2,"Banned"),
 )
 
+
 class Course(models.Model):
     title = models.CharField(max_length=200, unique=True)
     desc = models.CharField(max_length=2000, default="")
 
     slug = models.SlugField(null=False, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
-    updated_on = models.DateTimeField(auto_now= True)
-    created_on = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses', editable=False)
+    updated_on = models.DateTimeField(auto_now=True, editable=False)
+    created_on = models.DateTimeField(auto_now_add=True, editable=False)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    views = models.IntegerField(default=0, editable=False)
+    likes = models.IntegerField(default=0, editable=False)
 
     def __str__(self) -> str:
         return str(self.slug)
@@ -31,8 +35,8 @@ class Lesson(models.Model):
 
     slug = models.SlugField(null=False, unique=True)
     order = models.PositiveIntegerField(default=None)
-    updated_on = models.DateTimeField(auto_now= True)
-    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True, editable=False)
+    created_on = models.DateTimeField(auto_now_add=True, editable=False)
 
     course = models.ForeignKey('Course', on_delete= models.CASCADE, related_name='lessons')
 
