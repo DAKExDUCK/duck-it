@@ -25,7 +25,7 @@ class Course(models.Model):
 
     views = models.ManyToManyField(User, blank=True, related_name='viewed_by', editable=False)
     likes = models.ManyToManyField(User, blank=True, related_name='liked_by', editable=False)
-    favorites = models.ManyToManyField(User, blank=True, related_name='favorited_by', editable=False)
+    saves = models.ManyToManyField(User, blank=True, related_name='saved_by', editable=False)
 
     def get_views(self):
         return self.views.count()
@@ -33,8 +33,8 @@ class Course(models.Model):
     def get_likes(self):
         return self.likes.count()
     
-    def get_favorites(self):
-        return self.favorites.count()
+    def get_saves(self):
+        return self.saves.count()
 
     def __str__(self) -> str:
         return str(self.slug)
