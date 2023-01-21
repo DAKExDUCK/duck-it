@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
+AUTH_USER_MODEL = 'accounts.User'
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 APPS_DIR = os.path.join(BASE_DIR, '../apps/')
