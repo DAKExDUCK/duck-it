@@ -1,5 +1,4 @@
 from django.views.generic import ListView, DetailView
-from bs4 import BeautifulSoup
 
 from .models import Course, Lesson
 
@@ -7,6 +6,9 @@ from .models import Course, Lesson
 class CoursesListView(ListView):
     model = Course
     template_name = "courses/courses_list.html"
+
+    def get_queryset(self):
+        return Course.objects.filter(status=1).order_by('likes')
 
 
 class CourseDetailView(DetailView):
