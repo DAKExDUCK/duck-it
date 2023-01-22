@@ -1,19 +1,16 @@
-name: telegram-notify
+name: telegram-notify-on-push
 
 on:
   push:
     branches:
-    - main
-  pull_request:
-    branches:
-    - main
+      - main
 
 jobs:
   build:
-    name: Notify about commit or pull request
+    name: Notify about commit
     runs-on: ubuntu-latest
     steps:
-      - name: send telegram message on push
+      - name: telegram-notify-on-push
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
