@@ -50,6 +50,7 @@ venv\Scripts\activate.bat
 
 ## Migrations
 
+1. Install MySQL server (or MariaDB) and start it 
 
 2. Create `secret_key`
 #### Linux:
@@ -74,6 +75,7 @@ DB_PORT="port"
 
 4. Make migrations
 ```sh
+python manage.py makemigrations
 python manage.py migrate
 ```
 
