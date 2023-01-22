@@ -18,7 +18,7 @@ class Course(models.Model):
     desc = models.CharField(max_length=2000, default="")
 
     slug = models.SlugField(null=False, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses', editable=False)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
@@ -27,13 +27,16 @@ class Course(models.Model):
     likes = models.ManyToManyField(User, blank=True, related_name='liked_by', editable=False)
     saves = models.ManyToManyField(User, blank=True, related_name='saved_by', editable=False)
 
-    def get_views(self):
+    def get_count_lessons(self):
         return self.views.count()
 
-    def get_likes(self):
+    def get_count_views(self):
+        return self.views.count()
+
+    def get_count_likes(self):
         return self.likes.count()
     
-    def get_saves(self):
+    def get_count_saves(self):
         return self.saves.count()
 
     def __str__(self) -> str:
