@@ -17,6 +17,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             New Pull Request from ${{ github.actor }}
-            Commit message: ${{ github.event.commits[0].message }}
 
             https://github.com/DAKExDUCK/duck-it/pulls
