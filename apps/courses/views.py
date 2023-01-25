@@ -32,7 +32,7 @@ class LessonView(DetailView):
 
 def like_course(request, slug):
     user = request.user
-    course = get_object_or_404(Course, slug=slug, status=0)
+    course = get_object_or_404(Course, slug=slug, status=1)
     if course.likes.filter(id=user.id).exists():
         course.likes.remove(user)
         data = {
@@ -51,7 +51,7 @@ def like_course(request, slug):
 
 def save_course(request, slug):
     user = request.user
-    course = get_object_or_404(Course, slug=slug, status=0)
+    course = get_object_or_404(Course, slug=slug, status=1)
     if course.saves.filter(id=request.user.id).exists():
         course.saves.remove(user)
         data = {
