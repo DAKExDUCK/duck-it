@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('', include('accounts.urls')),
     path('courses/', include('courses.urls')),
+    path('posts/', include('posts.urls')),
 
     path('admins/', include('admins.urls')),
     path("ckeditor5/", include('django_ckeditor_5.urls')),

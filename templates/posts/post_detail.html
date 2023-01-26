@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script>
+        function like_course() {
+            $.ajax({
+                type: "POST",
+                url: "{% url 'like_post' object.slug %}",
+                data: {
+                    "csrfmiddlewaretoken": "{{csrf_token}}",
+                },
+                success: function (data) {
+                    alert(data['message'], data['status'])
+                }
+            });
+        }
+
+        function save_course() {
+            $.ajax({
+                type: "POST",
+                url: "{% url 'save_post' object.slug %}",
+                data: {
+                    "csrfmiddlewaretoken": "{{csrf_token}}",
+                },
+                success: function (data) {
+                    alert(data['message'], data['status'])
+                }
+            });
+        }
+    </script>
+    <div>
+        <h2>{{ object.title }}</h2>
+        <p>{{ object.desc }}</p>
+
+        <button onclick="like_course()">Like</button>
+        <button onclick="save_course()">Save</button>
+    </div>
+
+{% endblock %}
+

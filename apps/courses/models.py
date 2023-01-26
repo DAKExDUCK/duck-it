@@ -23,9 +23,9 @@ class Course(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    views = models.ManyToManyField(User, blank=True, related_name='viewed_by', editable=False)
-    likes = models.ManyToManyField(User, blank=True, related_name='liked_by', editable=False)
-    saves = models.ManyToManyField(User, blank=True, related_name='saved_by', editable=False)
+    views = models.ManyToManyField(User, blank=True, related_name='course_viewed_by', editable=False)
+    likes = models.ManyToManyField(User, blank=True, related_name='course_liked_by', editable=False)
+    saves = models.ManyToManyField(User, blank=True, related_name='course_saved_by', editable=False)
 
     def get_count_lessons(self):
         return self.views.count()
