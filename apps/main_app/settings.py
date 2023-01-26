@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'admins',
     'courses',
+    'posts',
 
     'crispy_forms',
 
