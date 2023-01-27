@@ -30,7 +30,7 @@
     </script>
     <div>
         <h2>{{ object.title }}</h2>
-        <p>{{ object.desc }}</p>
+        {{ object.body|safe }}
 
         <button onclick="like_course()">Like</button>
         <button onclick="save_course()">Save</button>
