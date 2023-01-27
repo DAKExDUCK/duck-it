@@ -10,9 +10,10 @@ load_dotenv()
 
 AUTH_USER_MODEL = 'accounts.User'
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-APPS_DIR = os.path.join(BASE_DIR, '../apps/')
+APPS_DIR = os.path.join(Path(__file__).resolve().parent.parent)
+
 sys.path.insert(0, APPS_DIR)
 
 SECRET_KEY = os.getenv('SECRET_KEY')
