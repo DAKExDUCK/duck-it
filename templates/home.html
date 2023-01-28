@@ -1,7 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Home</title>
+{% endblock %}
+
+{% block extrahead %}
+<link rel=”stylesheet” type="text/css" rel="noopener" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block content %}
