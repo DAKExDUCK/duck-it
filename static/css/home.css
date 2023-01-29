@@ -1,3 +1,125 @@
-body{
-    background-color: aqua;
+
+header{
+    display: block;
+    height: 100vh;
+    background: linear-gradient(55.95deg, #f9c8a6 0%, #FFD8B3 100%);
+
+}
+
+.header_text{
+    padding-top: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_text{
+    font-size: 64px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.explore_course{
+    width: 200px;
+    height: 52px;
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26px;
+}
+
+.explore_course a{
+        color: #fff;
+        font-size: 16px;
+}
+
+.statistics{
+    padding-top: 160px;
+}
+
+.statistics,
+.statistic{
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.statistic h1{
+    font-size: 46px;
+}
+
+.statistic h2{
+    padding-left: 12px;
+    font-size: 16px;
+}
+
+.dot{
+    font-size: 50px;
+    margin-right:70px;
+    color: #F75E05;
+}
+
+.recently{
+    width: 100%;
+    max-height: 600px;
+    text-align: center;
+}
+
+.post_card{
+    height: 507px;
+    width: 390px;
+}
+
+.recent_blogs{
+    padding-top: 40px;
+}
+
+.card_image{
+    height: 300px;
+    width: 390px;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+}
+
+.card_date h1{
+    padding-top: 5px;
+    font-size: 14px;
+    color:  #787A80;
+    text-align: left;
+}
+
+.card_desc{
+    text-align: left;
+}
+
+.card_desc h1{
+    font-weight: 700;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.card_desc h2{
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #424551;
+}
+
+.card_desc a{
+    display: block;
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+
+.card_desc a:hover{
+    text-decoration: underline;
+    color: #F75E05;
 }

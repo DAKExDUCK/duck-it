@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1260px;
+    margin:0 auto;
+}
+
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.logo_name{
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.nav_link ul{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.nav_link ul li{
+    margin-left: 35px;
+}
+.nav_link ul li a{
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav_link ul li a:hover {
+    color: #FF3F3A;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
+.auth{
+width: 135px;
+
+height: 52px;
+background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+border-radius: 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.button_sign{
+    color: #fff;
+    font-size: 16px;
+}
+
+footer{
+    margin-top: 100px;
+    height: 400px;
+    background-color: #1E212C;
+    margin-bottom: -100px;
+}
+
+.footer_top{
+    background-color: #1E212C;
+    height: 340px;
+    width: 100%;
+}
+
+
+.logo_desc{
+    color:#fff;
+    width: 279px;
+    font-size: 12px;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+
+.sitemap{
+    padding-top:25px;
+    padding-left: 80px;
+}
+
+.sitemap ul li{
+    padding-top: 12px;
+}
+
+.sitemap ul li a{
+    color: #fff;
+    opacity: 0.6;
+}
+
+.footer_top_content{
+    display: flex;
+    flex-direction: row;
+    padding-top: 55px;
+}
+
+.contact_us{
+    padding-left: 80px;
+    padding-top:25px;
+}
+
+.contact_us h1{
+    color: #fff;
+    font-size: 16px;
+    padding-bottom: 12px;
+}
+
+.mail{
+    color: #fff;
+    opacity: 0.6;   
+}
+
+.mail h1,
+.mail i{
+    font-size: 16px;
+}
+
+.footer_bottom{
+    height: 60px;
+    background: #272b38;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.footer_bottom_content{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    
+}
+
+.footer_bottom_content h1{
+    color: #FFFFFF; 
+    font-size: 12px; 
+    display: block;
+}
