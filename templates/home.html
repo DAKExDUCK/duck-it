@@ -10,17 +10,21 @@
 {% endblock %}
 
 {% block header_content %}
-<div class="header_text">
-    <h1 class="main_text">Comprehend new heights of knowledge with our platform</h1>
-    <div class="explore_course"><a href="{% url 'courses' %}">Explore Courses</a></div>
+<div class="header_content_main">
+    <div class="header_text">
+        <h1 class="main_text">Comprehend new heights of knowledge with our platform</h1>
+        <div class="explore_course"><a href="{% url 'courses' %}">Explore Courses</a></div>
+    </div>
+    
+    <div class="statistics">
+        <div class="statistic"><h1>120</h1><h2>Users in platform</h2></div>   
+        <div class="statistic"><div class="dot">·</div><h1>8+</h1><h2>Completed courses</h2></div>  
+        <div class="statistic"><div class="dot">·</div><h1>9+</h1><h2>Team Members</h2></div>  
+        <div class="statistic"><div class="dot">·</div><h1>1</h1><h2>Year of experience</h2></div>  
+    </div>
 </div>
 
-<div class="statistics">
-    <div class="statistic"><h1>120</h1><h2>Users in platform</h2></div>   
-    <div class="statistic"><div class="dot">·</div><h1>8+</h1><h2>Completed courses</h2></div>  
-    <div class="statistic"><div class="dot">·</div><h1>9+</h1><h2>Team Members</h2></div>  
-    <div class="statistic"><div class="dot">·</div><h1>1</h1><h2>Year of experience</h2></div>  
-</div>
+
 {% endblock %}
 
 {% block content %}

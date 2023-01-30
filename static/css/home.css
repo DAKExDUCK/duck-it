@@ -6,8 +6,16 @@ header{
 
 }
 
+.header_content_main{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .header_text{
-    padding-top: 260px;
+    margin-top: auto;
+    margin-bottom: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +45,8 @@ header{
 }
 
 .statistics{
-    padding-top: 160px;
+    height: 120px;
+    
 }
 
 .statistics,
