@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.http.request import HttpRequest
 from django.shortcuts import render, redirect
 
+from posts.models import Post
+
 
 def redirect_page(request: HttpRequest):
     if request.user.is_authenticated:
@@ -12,12 +14,13 @@ def redirect_page(request: HttpRequest):
         return redirect('about')
 
 
-@login_required(login_url='login')
 def home(request: HttpRequest):
-    return render(request, 'home.html')
+    recent_posts = Post.objects.filter(status=1).order_by('created_on')[:5]
+
+    return render(request, 'home.html', context = { 'posts': recent_posts })
 
 
-def about(request):
+def about(request: HttpRequest):
     return render(request, 'about.html')
 
 

@@ -13,7 +13,9 @@
 <div class="header_content_main">
     <div class="header_text">
         <h1 class="main_text">Comprehend new heights of knowledge with our platform</h1>
-        <div class="explore_course"><a href="{% url 'courses' %}">Explore Courses</a></div>
+        <a href="{% url 'courses' %}">
+            <div class="explore_course">Explore Courses</div>
+        </a>
     </div>
     
     <div class="statistics">
@@ -31,23 +33,23 @@
    <div class="recently">
     <h1>RECENTLY</h1>
     <div class="recent_blogs">
-        {% if post %}
-        {% for el in post %}
-        <div class="post_card">
-            <img class="card_image" src="{% static 'image/python.jpg' %}" alt="">
-            <div class="card_date">
-                <h1>30.01.2023</h1>
+        {% if posts %}
+            {% for el in posts %}
+            <div class="post_card">
+                {% comment %} IT WILL BE LATER <img class="card_image" src="{% static el.image %}" alt=""> {% endcomment %}
+                <img class="card_image" src="{% static 'image/python.jpg' %}" alt="">
+                <div class="card_date">
+                    <h1>{{ el.created_on }}</h1>
+                </div>
+                <div class="card_desc">
+                    <h1>{{ el.title }}</h1>
+                    <a class="card_read" href="{% url 'post' el.slug %}">Read More</a>
+                </div>
             </div>
-            <div class="card_desc">
-                <h1>{{ el.title }}</h1>
-                <h2>{{ el.body }}</h2>
-                <a class="card_read" href="{% url 'post' post.slug %}">Read More</a>
-            </div>
-        </div>
-    {% endfor %}
-    {% else %}
+            {% endfor %}
+        {% else %}
             <p>У вас нет записей</p>
-    {% endif %}
+        {% endif %}
        
     </div>
 </div>

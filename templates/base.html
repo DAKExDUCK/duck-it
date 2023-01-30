@@ -16,7 +16,9 @@
     <header>
     <div class="container">
      <div class="navbar">
-        <div class="logo"><h1 class="logo_name">DUCK<span style="color:#F75E05">IT</span></h1></div>
+        <a href="{% url 'home' %}">
+            <div class="logo"><h1 class="logo_name">DUCK<span style="color:#F75E05">IT</span></h1></div>
+        </a>
         <div class="nav_link">
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
@@ -26,13 +28,19 @@
                 <li><a href="{% url 'about' %}">Contact</a></li>
             </ul>
         </div>
-        <div class="auth">
-            {% if not user.is_authenticated %}
-            <a class="button_sign" href="{% url 'login' %}">Sign in</a>
-            {% else %}
-            <a class="button_sign" href="{% url 'logout' %}">Logout</a>
-            {% endif %}
-        </div>
+        {% if not user.is_authenticated %}
+        <a class="button_sign" href="{% url 'login' %}">
+            <div class="auth">
+                Sign in
+            </div>
+        </a>
+        {% else %}
+        <a class="button_sign" href="{% url 'logout' %}">
+            <div class="auth">
+                Logout
+            </div>
+        </a>
+        {% endif %}
      </div>
     </div>
     <div class="container">
