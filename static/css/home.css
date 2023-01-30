@@ -73,17 +73,25 @@ header{
 
 .recently{
     width: 100%;
-    max-height: 600px;
+    height: 600px;
+    margin-top: 80px;
     text-align: center;
+    overflow: hidden;
 }
 
 .post_card{
     height: 507px;
-    width: 390px;
+    width: 30%;
 }
 
 .recent_blogs{
     padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    
+    align-content: flex-start;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card_image{
@@ -109,6 +117,15 @@ header{
     font-weight: 700;
     font-size: 20px;
     padding-top: 10px;
+
+}
+
+.card_desc h2{
+    padding-top: 10px;
+    font-size: 16px;
+    color: #424551;
+    height: 50px;
+    overflow: hidden;
 }
 
 
@@ -123,4 +140,201 @@ header{
 .card_desc a:hover{
     text-decoration: underline;
     color: #F75E05;
+}
+
+
+.featured_course{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.featured_course_content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.courses_content_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.all_courses_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 202px;
+    height: 52px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #F75E05;
+    color: #F75E05;
+    font-weight: 700;
+font-size: 16px;
+}
+
+.all_courses_btn:hover{
+    background-color: #F75E05;
+    color: #fff;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
+.course_header_text h3{
+    font-size: 16px;
+    color: #1E212C;
+}
+
+.course_header_text h1{
+    font-weight: 900;
+font-size: 46px;
+}
+
+.course_card{
+    width: 600px;
+    height: 214px;
+    display: flex;
+    border: 1px solid #E5E8ED;
+    border-radius: 4px;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    margin-top: 20px;
+}
+
+.course_card_image{
+    height: 100%;
+    width: 214px;
+    border-radius: 3px;
+}
+
+.course_card_text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 32px;
+}
+
+.course_level{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1px 8px;
+    gap: 10px;
+    width: 72px;
+    height: 23px;
+    background: #03CEA4;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 32px;
+}
+
+.course_title{
+    font-weight: 700;
+font-size: 20px;
+margin-top: 25px;
+line-height: 150%;
+}
+
+
+.bookmark{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-self: flex-end;
+margin-bottom: 15px;
+margin-left: 5px;
+}
+
+.testimonials{
+    margin-top: 112px;
+    display: flex;
+    
+    text-align: center;
+    height: 632px;
+    flex-direction: column;
+    background: #F4F5F7;
+
+}
+
+.testimonials h1{
+    font-weight: 900;
+    font-size: 46px;
+    margin-top: 8px;
+}
+
+.testimonials h2{
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 18px;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+}
+
+.reviews {
+    margin-top: 50px;
+    width: 1020px;
+    height: 344px;
+    background: #FFFFFF;
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+}
+
+.review_container{
+    width: 80%;
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.review_text{
+    font-size: 20px;
+    line-height: 150%;
+    color: #424551;
+    width: 100%;
+}
+
+.review_author{
+    width: 243px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+   
+}
+
+.author_pfp{
+    width: 72px;
+    height: 72px;
+
+}
+
+.author_data{
+    margin-left: 20px;
+}
+
+.author_name{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    color: #1E212C;
+}
+
+.author_status{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #787A80;
 }

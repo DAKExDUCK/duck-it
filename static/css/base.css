@@ -13,6 +13,16 @@ html{
     scroll-behavior: smooth;
 }
 
+.page{
+    overflow: hidden;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
 ::-webkit-scrollbar {
     width: 0px;
   }
@@ -101,10 +111,8 @@ align-items: center;
 }
 
 footer{
-    margin-top: 100px;
     height: 400px;
-    background-color: #1E212C;
-    margin-bottom: -100px;
+    background-color: #1E212C;   
 }
 
 .footer_top{

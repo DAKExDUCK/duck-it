@@ -9,10 +9,12 @@
     {% endcomment %}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/base.css' %}" />
+    
     {% block extrahead %}{% endblock %}
 </head>
 
 <body>
+    <div class="page">
     <header>
     <div class="container">
      <div class="navbar">
@@ -50,14 +52,13 @@
 </header>
 
 
-
+<main class="content">
     <div id="liveAlertPlaceholder" style="position: fixed; top: 25px; right: 25px; z-index: 9999; width: 200px"></div>
-    <div class="container">
+    
         {% block content %}
     
         {% endblock %}
-    </div>
-   
+</main>
     <footer>
         <div class="footer_top">
             <div class="container">
@@ -95,7 +96,7 @@
                 </div>
             </div>
         </footer>
-    
+    </div>
     <script>
         const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
@@ -119,5 +120,6 @@
             }, 5000)
         }
     </script>
+    
 </body>
 </html>
