@@ -36,72 +36,44 @@
    <div class="recently">
     <h1>RECENTLY</h1>
     <div class="recent_blogs">
-        {% if posts %}
-            {% for el in posts %}
-            <div class="post_card">
-                {% comment %} IT WILL BE LATER <img class="card_image" src="{% static el.image %}" alt=""> {% endcomment %}
-                <img class="card_image" src="{% static 'image/python.png' %}" alt="">
-                <div class="card_date">
-                    <h1>{{ el.created_on }}</h1>
-                </div>
-                <div class="card_desc">
-                    <h1>{{ el.title }}</h1>
-                    <h2>{{ el.body }}</h2>
-                    <a class="card_read" href="{% url 'post' el.slug %}">Read More</a>
-                </div>
+        {% for post in posts %}
+        <div class="post_card">
+            {% comment %} IT WILL BE LATER <img class="card_image" src="{% static post.image %}" alt=""> {% endcomment %}
+            <img class="card_image" src="{% static 'image/python.png' %}" alt="">
+            <div class="card_date">
+                <h1>{{ post.created_on }}</h1>
             </div>
-            {% endfor %}
-        {% else %}
-            <p>У вас нет записей</p>
-        {% endif %}
-       
+            <div class="card_desc">
+                <h1>{{ post.title }}</h1>
+                <a class="card_read" href="{% url 'post' post.slug %}">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 </div>
 <div class="container">
-<div class="featured_course">
-    <div class="courses_content_header">
-        <div class="course_header_text">
-            <h3>READY TO LEARN?</h3>
-            <h1>Featured Courses</h1>
-        </div>
+    <div class="featured_course">
+        <div class="courses_content_header">
+            <div class="course_header_text">
+                <h3>READY TO LEARN?</h3>
+                <h1>Featured Courses</h1>
+            </div>
         
-    <a href="{% url 'courses' %}" class="all_courses_btn">View all courses</a>
-    </div>
+        <a href="{% url 'courses' %}" class="all_courses_btn">View all courses</a>
+        </div>
 <div class="featured_course_content">
 
+    {% for course in courses %}
     <div class="course_card">
         <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
         <div class="course_card_text">
-            <a href="#"><h1 class="course_level">Beginner</h1></a>
-            <a href=""><h1 class="course_title">Ultimate JavaScript course in 2023 </h1></a>
+            <a href="" class="course_level">Beginner</a>
+            <a href="{% url "course" course.slug %}" class="course_title">{{ course.title }}</a>
         </div>
-        <a href="" class="bookmark"><img src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
+        <a class="bookmark"><img src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
     </div>
-    <div class="course_card">
-        <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
-        <div class="course_card_text">
-            <a href="#"><h1 class="course_level">Beginner</h1></a>
-            <a href=""><h1 class="course_title">Ultimate JavaScript course in 2023 </h1></a>
-        </div>
-        <a href="" class="bookmark"><img src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
-    </div>
-    <div class="course_card">
-        <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
-        <div class="course_card_text">
-            <a href="#"><h1 class="course_level">Beginner</h1></a>
-            <a href=""><h1 class="course_title">Ultimate JavaScript course in 2023 </h1></a>
-        </div>
-        <a href="" class="bookmark"><img src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
-    </div>
-    <div class="course_card">
-        <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
-        <div class="course_card_text">
-            <a href="#"><h1 class="course_level">Beginner</h1></a>
-            <a href=""><h1 class="course_title">Ultimate JavaScript course in 2023 </h1></a>
-        </div>
-        <img href="" class="bookmark" src="{% static 'icons/bookmark-white.png' %}" alt="" onclick="switchBookmark()">
-    </div>
+    {% endfor %}
 </div>
 </div></div>
 

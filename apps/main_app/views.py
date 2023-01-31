@@ -5,6 +5,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render, redirect
 
 from posts.models import Post
+from courses.models import Course
 
 
 def redirect_page(request: HttpRequest):
@@ -15,9 +16,10 @@ def redirect_page(request: HttpRequest):
 
 
 def home(request: HttpRequest):
-    recent_posts = Post.objects.filter(status=1).order_by('created_on')[:5]
+    recent_posts = Post.objects.filter(status=1).order_by('created_on').reverse()[:3]
+    best_courses = Course.objects.filter(status=1).order_by('likes').reverse()[:6]
 
-    return render(request, 'home.html', context = { 'posts': recent_posts })
+    return render(request, 'home.html', context = { 'posts': recent_posts , 'courses': best_courses })
 
 
 def about(request: HttpRequest):
