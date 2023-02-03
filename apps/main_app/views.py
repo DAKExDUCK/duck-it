@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, logout as logout_user, login as lo
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http.request import HttpRequest
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 from posts.models import Post
@@ -25,7 +26,8 @@ def home(request: HttpRequest):
 def about(request: HttpRequest):
     recent_posts = Post.objects.filter(status=1).order_by('created_on').reverse()[:3]
     best_courses = Course.objects.filter(status=1).order_by('likes').reverse()[:6]
-    return render(request, 'about.html',context = { 'posts': recent_posts , 'courses': best_courses })
+    
+    return render(request, 'about.html')
 
 
 def login(request: HttpRequest):
@@ -38,9 +40,6 @@ def login(request: HttpRequest):
         if user is not None:
             login_user(request, user)
             redirect('home')
-        else:
-            # Return an 'invalid login' error message.
-            ...
 
 
 @login_required(login_url='login')
@@ -53,8 +52,8 @@ def register(request: HttpRequest):
     if request.method == 'GET':
         return render(request, 'auth/sign_up.html')
     elif request.method == 'POST':
-        username = 'dake_duck'
-        mail = 'arsengabdulin228@gmail.com'
-        passwd = '123qwe123qwe'
+        username = request.POST['username']
+        passwd = request.POST['password']
+        mail = request.POST['mail']
         user = User.objects.create_user(username, mail, passwd)
         user.save()
