@@ -5,11 +5,12 @@
         {% block title %}{% endblock %}
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/base.css' %}" />
-        
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         {% block extrahead %}{% endblock %}
     </head>
 
     <body>
+        <div class="page">
         <header>
             <div class="container">
                 <div class="navbar">
@@ -85,12 +86,12 @@
                 <div class="container">
                 <div class="footer_bottom_content">
                     <h1>© All rights reserved.Made by DUCKIT</h1>
-                    <h1>GO TO TOP</h1>
+                    <div onclick="scrollToTop()" class="scroll_to_top"><h1>GO TO TOP</h1></div>
                 </div>
                 </div>
             </div>
         </footer>
-
+    </div>
         <script>
             function send_req(url, type) {
                 $.ajax({
@@ -126,6 +127,11 @@
                     wrapper.remove()
                 }, 5000)
             }
+
+        function scrollToTop(){
+            window.scrollTo(0,0);
+        }
+        
         </script>
     </body>
 </html>

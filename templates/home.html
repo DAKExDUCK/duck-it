@@ -65,7 +65,7 @@
 <div class="featured_course_content">
 
     {% for course in courses %}
-    <div class="course_card">
+    <div class="course_card" style="cursor: pointer;" onclick="window.location='{% url "course" course.slug %}';">
         <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
         <div class="course_card_text">
             <a href="" class="course_level">Beginner</a>

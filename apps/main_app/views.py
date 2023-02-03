@@ -25,8 +25,7 @@ def home(request: HttpRequest):
 def about(request: HttpRequest):
     recent_posts = Post.objects.filter(status=1).order_by('created_on').reverse()[:3]
     best_courses = Course.objects.filter(status=1).order_by('likes').reverse()[:6]
-    
-    return render(request, 'about.html')
+    return render(request, 'about.html',context = { 'posts': recent_posts , 'courses': best_courses })
 
 
 def login(request: HttpRequest):

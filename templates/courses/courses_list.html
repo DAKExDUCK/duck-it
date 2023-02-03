@@ -1,11 +1,59 @@
 {% extends "base.html" %}
-
-{% block content %}
-    <h1>Courses</h1>
-    {% for course in object_list %}
-        <ul>
-            <li><a href="{% url 'course' course.slug %}">{{ course.title }}</a></li>
-        </ul>
-    {% endfor %}
+{% load static %}
+{% block title %}
+<title>Courses</title>
 {% endblock %}
 
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/courses.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="courses">
+   <div class="courses_title">
+    <h3>ENJOY YOUR STUDYING!</h3>
+    <h1>Our online courses</h1>
+    <div class="search">
+        <form>
+            <input type="text" name="" placeholder="Type...">
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+       </div>
+   </div>
+
+   <div class="container">
+    <div class="featured_course">
+<div class="featured_course_content">
+
+    {% for course in object_list %}
+    <div class="course_card" style="cursor: pointer;" onclick="window.location='{% url "course" course.slug %}';">
+        <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
+        <div class="course_card_text">
+            <a href="" class="course_level">Beginner</a>
+            <a href="{% url "course" course.slug %}" class="course_title">{{ course.title }}</a>
+        </div>
+        <a class="bookmark"><img src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
+    </div>
+    {% endfor %}
+</div>
+<div class="load_more">Load More</div>
+</div>
+
+</div>
+   
+</div>
+</div>
+{% endblock %}
+
+
+
+{{% comment "" %}
+<h1>Courses</h1>
+{% for course in object_list %}
+    <ul>
+        <li><a href="{% url 'course' course.slug %}">{{ course.title }}</a></li>
+    </ul>
+{% endfor %}
+{% endcomment %}}

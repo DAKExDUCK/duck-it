@@ -1,6 +1,58 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>{{ object.title }}</title>
+{% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/courses_detail.css' %}">
+{% endblock %}
+{% block header_content %}
+<div class="header_content_main">
+    <h3 style="color:#FF3F3A">Course</h3>
+    <h1>{{ object.title }}</h1>
+    
+</div>
+
+
+{% endblock %}
 
 {% block content %}
+<div class="container">
+
+<div class="about_course">
+    <div class="desc">
+        <div class="first_desc">
+            <h1>About the course</h1>
+            <h3>{{ object.desc }}</h3>
+        </div>
+    <div class="will_learn">
+        <div class="advantage_text">
+            <h1>You will learn:</h1>
+            <div class="advantage_text_list">
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="course_join_block">
+<div class="course_image"><img src="{% static 'image/course_image.png' %}" alt="">
+    <div class="join_button">
+        <a href="{% url 'courses' %}">
+            <div class="join">Join the course</div>
+        </a>
+        <button class="like" onclick="like_course()"><i class='bx bxs-like'></i></button>
+    <button class="save" onclick="save_course()"><i class='bx bxs-bookmark-star' ></i></button>
+    </div>
+   
+</div>
+</div>
+</div>
     <script>
         function like_course() {
             $.ajax({
@@ -27,20 +79,8 @@
                 }
             });
         }
-    </script>
-    <div>
-        <h2>{{ object.title }}</h2>
-        <p>{{ object.desc }}</p>
-        {% if object.lessons.all|length > 0 %}
-            {% for lesson in object.lessons.all %}
-            <ul>
-                <li><a href="{% url 'lesson' object.slug lesson.slug %}">{{ lesson.title }}</a></li>
-            </ul>
-            {% endfor %}
-        {% endif %}
-        <button onclick="like_course()">Like</button>
-        <button onclick="save_course()">Save</button>
-    </div>
 
+            </script>
 {% endblock %}
+
 
