@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import DetailView, ListView
+from django.contrib.auth.models import AnonymousUser
 
 from .models import Course, Lesson
 
@@ -32,37 +33,49 @@ class LessonView(DetailView):
 
 def like_course(request, slug):
     user = request.user
-    course = get_object_or_404(Course, slug=slug, status=1)
-    if course.likes.filter(id=user.id).exists():
-        course.likes.remove(user)
+    if user is not AnonymousUser:
         data = {
             'status': 'info',
-            'message': 'Course unliked'
+            'message': 'You must Sign in to use it'
         }
     else:
-        course.likes.add(user)
-        data = {
-            'status': 'success',
-            'message': 'Course liked'
-        }
+        course = get_object_or_404(Course, slug=slug, status=1)
+        if course.likes.filter(id=user.id).exists():
+            course.likes.remove(user)
+            data = {
+                'status': 'info',
+                'message': 'Course unliked'
+            }
+        else:
+            course.likes.add(user)
+            data = {
+                'status': 'success',
+                'message': 'Course liked'
+            }
     
     return JsonResponse(data)
 
 
 def save_course(request, slug):
     user = request.user
-    course = get_object_or_404(Course, slug=slug, status=1)
-    if course.saves.filter(id=request.user.id).exists():
-        course.saves.remove(user)
+    if user is not AnonymousUser:
         data = {
             'status': 'info',
-            'message': 'Course removed from Saved'
+            'message': 'You must Sign in to use it'
         }
     else:
-        course.saves.add(user)
-        data = {
-            'status': 'success',
-            'message': 'Course added to Saved'
-        }
+        course = get_object_or_404(Course, slug=slug, status=1)
+        if course.saves.filter(id=request.user.id).exists():
+            course.saves.remove(user)
+            data = {
+                'status': 'info',
+                'message': 'Course removed from Saved'
+            }
+        else:
+            course.saves.add(user)
+            data = {
+                'status': 'success',
+                'message': 'Course added to Saved'
+            }
     
     return JsonResponse(data)

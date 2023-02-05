@@ -9,7 +9,9 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('home', views.home, name='home'),
 
+    path('login/', views.login_signup, name='login'),
     path('', include('accounts.urls')),
+
     path('courses/', include('courses.urls')),
     path('posts/', include('posts.urls')),
 

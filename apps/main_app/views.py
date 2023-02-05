@@ -1,8 +1,10 @@
-from django.contrib.auth import authenticate, logout as logout_user, login as login_user
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
+from courses.models import Course
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 from django.http.request import HttpRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+from posts.models import Post
+from accounts.forms import RegisterForm
 
 
 def redirect_page(request: HttpRequest):
@@ -12,42 +14,47 @@ def redirect_page(request: HttpRequest):
         return redirect('about')
 
 
-@login_required(login_url='login')
 def home(request: HttpRequest):
-    return render(request, 'home.html')
+    recent_posts = Post.objects.filter(status=1).order_by('created_on').reverse()[:3]
+    best_courses = Course.objects.filter(status=1).order_by('likes').reverse()[:6]
+
+    return render(request, 'home.html', context = { 'posts': recent_posts , 'courses': best_courses })
 
 
-def about(request):
-    return render(request, 'about.html')
+def about(request: HttpRequest):
+    recent_posts = Post.objects.filter(status=1).order_by('created_on').reverse()[:3]
+    best_courses = Course.objects.filter(status=1).order_by('likes').reverse()[:6]
+    
+    return render(request, 'about.html', context = { 'posts': recent_posts , 'courses': best_courses })
 
 
-def login(request: HttpRequest):
-    if request.method == "GET":
-        return render(request, 'auth/login.html')
-    elif request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login_user(request, user)
-            redirect('home')
-        else:
-            # Return an 'invalid login' error message.
-            ...
-
-
-@login_required(login_url='login')
-def logout(request: HttpRequest):
-    logout_user(request)
-    return redirect('')
-
-
-def register(request: HttpRequest):
+def login_signup(request):
+    start = ''
     if request.method == 'GET':
-        return render(request, 'auth/sign_up.html')
-    elif request.method == 'POST':
-        username = 'dake_duck'
-        mail = 'arsengabdulin228@gmail.com'
-        passwd = '123qwe123qwe'
-        user = User.objects.create_user(username, mail, passwd)
-        user.save()
+        login_form = AuthenticationForm()
+        sign_up_form = RegisterForm()
+    else:
+        if 'login' in request.POST:
+            login_form = AuthenticationForm(request, data=request.POST)
+            sign_up_form = RegisterForm()
+            if login_form.is_valid():
+                username = login_form.cleaned_data.get('username')
+                password = login_form.cleaned_data.get('password')
+                user = authenticate(username=username, password=password)
+                if user is not None:
+                    login(request, user=user)
+                    return redirect('home')
+        else:
+            login_form = AuthenticationForm()
+            sign_up_form = RegisterForm(data=request.POST)
+            if sign_up_form.is_valid():
+                user = sign_up_form.save()
+                login(request, user=user)
+                return redirect('home')
+            start = 'right-panel-active'
+
+    return render(request, 'registration/login.html', {
+        'login_form': login_form,
+        'sign_up_form': sign_up_form,
+        'start': start
+    })

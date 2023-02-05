@@ -1,21 +1,92 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 <title>Login</title>
 {% endblock %}
 
-{% block content %}
-    <h1>Login</h1>
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/login.css' %}">
+{% endblock %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log In</button>
-        <br>
-        <br>
-        <a href="{% url 'signup' %}">Sign up</a>
-        <br>
-        <br>
-        <a href="{% url 'password_reset' %}">Reset Password</a>
-    </form>
+{% block content %}
+<div class="container_login {{ start }}" id="container">
+    <div class="form-container sign-up-container">
+        <form method="post">
+            <h1>Create Account</h1>
+            {% csrf_token %}
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" value="" autofocus="" required="" id="id_email">
+            </p>
+    
+            <p>
+                <label for="id_password1">Password:</label>
+                <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                
+                <span class="helptext"></span>
+            </p>
+            
+            <p>
+                <label for="id_password2">Password confirmation:</label>
+                <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                
+                <span class="helptext">Enter the same password as before, for verification.</span>
+            </p>
+
+            {% if sign_up_form.password1.errors %}
+                <ul class="errorlist">
+                    <li>{{ sign_up_form.password1.errors.0 }}</li>
+                </ul>
+            {% endif %}
+
+            {% if sign_up_form.password2.errors %}
+                <ul class="errorlist">
+                    <li>{{ sign_up_form.password2.errors.0 }}</li>
+                </ul>
+            {% endif %}
+
+            <button  type="submit" name="sign_up" value="sign_up">Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form method="post">
+            <h1>Sign in</h1>
+            <a href="{% url 'password_reset' %}">Forgot your password?</a>
+            {% csrf_token %}
+            {{ login_form.as_p }}
+            <button type="submit" name="login" value="login">Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
+   
 {% endblock %}

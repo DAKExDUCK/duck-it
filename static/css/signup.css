@@ -1,0 +1,150 @@
+.container_login{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+}
+.login{
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    margin-top: 100px;
+    width: 500px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #E5E8ED;
+    box-shadow: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1), 0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+    border-radius: 4px;
+
+}
+
+.login h1{
+    margin-top: 28px;
+    font-weight: 700;
+font-size: 28px;
+line-height: 150%;
+}
+
+.login h3{
+    margin-top: 24px;
+    font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+color: #787A80;
+width: 390px;
+text-align: center;
+
+}
+
+
+.form{
+    width: 390px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.form p{
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+}
+
+.form p label{
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.form p input{
+    padding-left: 15px;
+    height: 44px;
+    width: 390px;
+    border-radius: 4px;
+    border: 1px solid #D7DADD;
+   
+}
+
+
+.sign_save{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    width: 138px;
+    height: 21px;
+    align-items: center;
+}
+
+.sign_save p{
+    font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+color: #424551;
+margin-left: 5px;
+}
+
+.sign_save input{
+    width: 16px;
+    height: 16px;
+}
+
+.reset{
+    float: right;
+    font-size: 14px; 
+    text-align: right;
+    color: #FF3F3A;
+}
+
+input[type="checkbox"] {
+    accent-color: #FF3F3A;
+    }
+
+.submit_button{
+    width: 390px;
+    height: 44px;
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    border-radius: 4px;
+    border: none;
+    margin-top: 20px;
+}
+
+.submit_button h3{
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: auto;
+}
+
+.signup_text{
+    font-weight: 400;
+font-size: 14px;
+text-align: left;
+}
+
+.sign_in{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 390px;
+}
+
+.sign_in a{
+    font-weight: 400;
+    font-size: 14px;
+    color: #F75E05;
+    margin-left: 5px;
+}
+
+.form ul li,
+.form span{
+    font-size: 14px;
+    color: #787A80;
+    line-height: 150%;
+}
