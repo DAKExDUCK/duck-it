@@ -46,8 +46,8 @@
         <a href="{% url 'courses' %}">
             <div class="join">Join the course</div>
         </a>
-        <button class="like" onclick="like_course()"><i class='bx bxs-like'></i></button>
-    <button class="save" onclick="save_course()"><i class='bx bxs-bookmark-star' ></i></button>
+        <button class="like" onclick="send_req('{% url 'like_course' object.slug %}', 'POST')"><i class='bx bxs-like'></i></button>
+        <button class="save" onclick="send_req('{% url 'save_course' object.slug %}', 'POST')"><i class='bx bxs-bookmark-star' ></i></button>
     </div>
    
 </div>

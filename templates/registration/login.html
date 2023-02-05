@@ -10,25 +10,52 @@
 {% endblock %}
 
 {% block content %}
-<div class="container_login" id="container">
+<div class="container_login {{ start }}" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form method="post">
             <h1>Create Account</h1>
-            <span>or use your email for registration</span>
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>Sign Up</button>
+            <p>
+                <label for="id_email">Email:</label>
+                <input type="email" name="email" value="" autofocus="" required="" id="id_email">
+            </p>
+    
+            <p>
+                <label for="id_password1">Password:</label>
+                <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                
+                <span class="helptext"></span>
+            </p>
+            
+            <p>
+                <label for="id_password2">Password confirmation:</label>
+                <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                
+                <span class="helptext">Enter the same password as before, for verification.</span>
+            </p>
+
+            {% if sign_up_form.password1.errors %}
+                <ul class="errorlist">
+                    <li>{{ sign_up_form.password1.errors.0 }}</li>
+                </ul>
+            {% endif %}
+
+            {% if sign_up_form.password2.errors %}
+                <ul class="errorlist">
+                    <li>{{ sign_up_form.password2.errors.0 }}</li>
+                </ul>
+            {% endif %}
+
+            <button  type="submit" name="sign_up" value="sign_up">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
         <form method="post">
             <h1>Sign in</h1>
-            <span>or use your account</span>
             <a href="{% url 'password_reset' %}">Forgot your password?</a>
             {% csrf_token %}
-            {{ form.as_p }}
-       
-            <button>Sign In</button>
+            {{ login_form.as_p }}
+            <button type="submit" name="login" value="login">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
@@ -50,16 +77,16 @@
 
 <script>
     const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
 
-signUpButton.addEventListener('click', () => {
-container.classList.add("right-panel-active");
-});
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
 
-signInButton.addEventListener('click', () => {
-container.classList.remove("right-panel-active");
-});
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
 </script>
    
 {% endblock %}
