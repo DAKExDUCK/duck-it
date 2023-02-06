@@ -145,13 +145,13 @@ header {
 
 .like,
 .save {
-    border: none;
+    border: 1px solid #F75E05;
     border-radius: 4px;
     width: 44px;
     height: 44px;
-    background-color: #F75E05;
+    background-color: #fff;
     font-size: 30px;
-    color: rgb(255, 255, 255);
+    color: #F75E05;
     outline: none;
     margin-top: 27px;
     margin-left: 3px;
@@ -167,3 +167,19 @@ header {
 .save:hover {
     cursor: pointer;
 }
+
+/* like,save onclick func
+.like,
+.save {
+    border: none;
+    border-radius: 4px;
+    width: 44px;
+    height: 44px;
+    background-color: #F75E05;
+    font-size: 30px;
+    color: #fff;
+    outline: none;
+    margin-top: 27px;
+    margin-left: 3px;
+}
+*/
