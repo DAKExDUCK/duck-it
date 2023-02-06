@@ -11,7 +11,7 @@
 <div class="header_content_main">
     <h3 style="color:#FF3F3A">Course</h3>
     <h1>{{ object.title }}</h1>
-    
+
 </div>
 
 
@@ -20,39 +20,44 @@
 {% block content %}
 <div class="container">
 
-<div class="about_course">
-    <div class="desc">
-        <div class="first_desc">
-            <h1>About the course</h1>
-            <h3>{{ object.desc }}</h3>
+    <div class="about_course">
+        <div class="desc">
+            <div class="first_desc">
+                <h1>About the course</h1>
+                <h3>{{ object.desc }}</h3>
+            </div>
+            <div class="will_learn">
+                <div class="advantage_text">
+                    <h1>You will learn:</h1>
+                    <div class="advantage_text_list">
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry</h3>
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry</h3>
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry</h3>
+                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-    <div class="will_learn">
-        <div class="advantage_text">
-            <h1>You will learn:</h1>
-            <div class="advantage_text_list">
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
-            <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+        <div class="course_join_block">
+            <div class="course_image"><img src="{% static 'image/course_image.png' %}" alt="">
+                <div class="join_button">
+                    <a href="{% url 'courses' %}">
+                        <div class="join">Join the course</div>
+                    </a>
+                    <button class="like" onclick="send_req('{% url 'like_course' object.slug %}', 'POST')"><i
+                            class='bx bxs-like'></i></button>
+                    <button class="save" onclick="send_req('{% url 'save_course' object.slug %}', 'POST')"><i
+                            class='bx bxs-bookmark-star'></i></button>
+                </div>
+
+            </div>
         </div>
     </div>
-    </div>
-</div>
-<div class="course_join_block">
-<div class="course_image"><img src="{% static 'image/course_image.png' %}" alt="">
-    <div class="join_button">
-        <a href="{% url 'courses' %}">
-            <div class="join">Join the course</div>
-        </a>
-        <button class="like" onclick="send_req('{% url 'like_course' object.slug %}', 'POST')"><i class='bx bxs-like'></i></button>
-        <button class="save" onclick="send_req('{% url 'save_course' object.slug %}', 'POST')"><i class='bx bxs-bookmark-star' ></i></button>
-    </div>
-   
-</div>
-</div>
-</div>
     <script>
         function like_course() {
             $.ajax({
@@ -80,7 +85,5 @@
             });
         }
 
-            </script>
-{% endblock %}
-
-
+    </script>
+    {% endblock %}

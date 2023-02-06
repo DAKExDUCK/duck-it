@@ -1,23 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% block title %}{% endblock %}
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        <link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/base.css' %}" />
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        {% block extrahead %}{% endblock %}
-    </head>
+<head>
+    {% block title %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-    <body>
-        <div class="page">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/base.css' %}" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% block extrahead %}{% endblock %}
+</head>
+
+<body>
+    <div class="page">
         <header>
             <div class="container">
                 <div class="navbar">
                     <a href="{% url 'home' %}">
-                        <div class="logo"><h1 class="logo_name">DUCK<span style="color:#F75E05">IT</span></h1></div>
+                        <div class="logo">
+                            <h1 class="logo_name">DUCK<span style="color:#F75E05">IT</span></h1>
+                        </div>
                     </a>
                     <div class="nav_link">
                         <ul>
@@ -46,12 +50,13 @@
             <div class="container">
                 {% block header_content %}{% endblock %}
             </div>
-        
+
         </header>
 
         <main class="content">
-            <div id="liveAlertPlaceholder" style="position: fixed; top: 25px; right: 25px; z-index: 9999; width: 200px"></div>
-            
+            <div id="liveAlertPlaceholder" style="position: fixed; top: 25px; right: 25px; z-index: 9999; width: 200px">
+            </div>
+
             {% block content %}
             {% endblock %}
         </main>
@@ -64,7 +69,10 @@
                             <div class="logo_name">
                                 <span style="color:#fff">DUCK</span><span style="color:#F75E05">IT</span>
                             </div>
-                            <div class="logo_desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="logo_desc">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book.</div>
                         </div>
                         <div class="sitemap">
                             <h1 style="color: #fff; font-size: 16px;">SITE MAP</h1>
@@ -78,62 +86,67 @@
                         </div>
                         <div class="contact_us">
                             <h1>CONTACT US</h1>
-                            <div class="mail"><h1>mail@duckit.com</h1></div>
+                            <div class="mail">
+                                <h1>mail@duckit.com</h1>
+                            </div>
                         </div>
                     </div>
-                
+
                 </div>
             </div>
             <div class="footer_bottom">
                 <div class="container">
-                <div class="footer_bottom_content">
-                    <h1>© All rights reserved.Made by DUCKIT</h1>
-                    <div onclick="scrollToTop()" class="scroll_to_top"><h1>GO TO TOP</h1></div>
-                </div>
+                    <div class="footer_bottom_content">
+                        <h1>© All rights reserved.Made by DUCKIT</h1>
+                        <div onclick="scrollToTop()" class="scroll_to_top">
+                            <h1>GO TO TOP</h1>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
     </div>
-        <script>
-            function send_req(url, type) {
-                $.ajax({
-                    type: type,
-                    url: url,
-                    data: {
-                        "csrfmiddlewaretoken": "{{csrf_token}}",
-                    },
-                    success: function (data) {
-                        alert(data['message'], data['status'])
-                    }
-                });
-            }
-
-            const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-
-            const alert = (message, type) => {
-                const wrapper = document.createElement('div')
-                wrapper.style.transition = "opacity 2s";
-                wrapper.style.animation = "slide-down 0.5s ease-in-out";
-                wrapper.innerHTML = [
-                    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-                    `   <div>${message}</div>`,
-                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                    '</div>'
-                ].join('')
-
-                alertPlaceholder.append(wrapper)
-                setTimeout(() => {
-                    wrapper.style.opacity = 0;
-                }, 3000)
-                setTimeout(() => {
-                    wrapper.remove()
-                }, 5000)
-            }
-
-        function scrollToTop(){
-            window.scrollTo(0,0);
+    <script>
+        function send_req(url, type) {
+            $.ajax({
+                type: type,
+                url: url,
+                data: {
+                    "csrfmiddlewaretoken": "{{csrf_token}}",
+                },
+                success: function (data) {
+                    alert(data['message'], data['status'])
+                }
+            });
         }
-        
-        </script>
-    </body>
+
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+        const alert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.style.transition = "opacity 2s";
+            wrapper.style.animation = "slide-down 0.5s ease-in-out";
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+            setTimeout(() => {
+                wrapper.style.opacity = 0;
+            }, 3000)
+            setTimeout(() => {
+                wrapper.remove()
+            }, 5000)
+        }
+
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+    </script>
+</body>
+
 </html>
