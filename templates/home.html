@@ -84,7 +84,7 @@
                 <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
                 <div class="course_card_text">
                     <a href="" class="course_level">Beginner</a>
-                    <a href="{% url " course" course.slug %}" class="course_title">{{ course.title }}</a>
+                    <a href="{% url "course" course.slug %}" class="course_title">{{ course.title }}</a>
                 </div>
                 <a class="bookmark" onclick="send_req('{% url 'save_course' course.slug %}', 'POST')"><img
                         src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
