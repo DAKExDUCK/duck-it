@@ -48,14 +48,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-{{% comment "" %}
-<h1>Courses</h1>
-{% for course in object_list %}
-<ul>
-    <li><a href="{% url 'course' course.slug %}">{{ course.title }}</a></li>
-</ul>
-{% endfor %}
-{% endcomment %}}

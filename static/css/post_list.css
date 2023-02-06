@@ -1,4 +1,4 @@
-.post_list{
+.post_list {
     display: flex;
     align-items: center;
     margin-top: 80px;
@@ -7,7 +7,7 @@
 }
 
 
-.post_title{
+.post_title {
     margin-top: 50px;
     width: 100%;
     display: flex;
@@ -15,21 +15,21 @@
     flex-direction: column;
 }
 
-.post_title h3{
+.post_title h3 {
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
 }
 
 
-.post_title h1{
+.post_title h1 {
     font-weight: 900;
     font-size: 46px;
     line-height: 130%;
 }
 
 
-.search{
+.search {
     margin-top: 50px;
     align-self: flex-end;
     width: 315px;
@@ -40,12 +40,12 @@
     align-items: center;
 }
 
-form{
+form {
     display: flex;
     align-items: center;
 }
 
-.search form input{
+.search form input {
     width: 280px;
     height: 44px;
     padding-left: 10px;
@@ -56,48 +56,48 @@ form{
     overflow: hidden;
 }
 
-form button{
+form button {
     outline: none;
     background: transparent;
     border: none;
 }
 
-form button i{
+form button i {
     font-size: 20px;
     color: #D7DADD;
 }
 
-form button i:hover{
+form button i:hover {
     cursor: pointer;
     color: #b1b4b6;
 }
 
-.course_header_text h3{
+.course_header_text h3 {
     font-size: 16px;
     color: #1E212C;
 }
 
-.course_header_text h1{
+.course_header_text h1 {
     font-weight: 900;
-font-size: 46px;
+    font-size: 46px;
 }
 
-.posts{
+.posts {
     margin-top: 100px;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
 }
 
-.post_card{
+.post_card {
     height: 507px;
     width: 30%;
 }
 
 
 
-.card_image{
+.card_image {
     height: 300px;
     width: 390px;
     left: 0px;
@@ -105,25 +105,25 @@ justify-content: space-between;
     border-radius: 4px;
 }
 
-.card_date h1{
+.card_date h1 {
     padding-top: 5px;
     font-size: 14px;
-    color:  #787A80;
+    color: #787A80;
     text-align: left;
 }
 
-.card_desc{
+.card_desc {
     text-align: left;
 }
 
-.card_desc h1{
+.card_desc h1 {
     font-weight: 700;
     font-size: 20px;
     padding-top: 10px;
 
 }
 
-.card_desc h2{
+.card_desc h2 {
     padding-top: 10px;
     font-size: 16px;
     color: #424551;
@@ -132,7 +132,7 @@ justify-content: space-between;
 }
 
 
-.card_desc a{
+.card_desc a {
     display: block;
     padding-top: 10px;
     font-weight: 700;
@@ -140,7 +140,7 @@ justify-content: space-between;
     color: #000;
 }
 
-.card_desc a:hover{
+.card_desc a:hover {
     text-decoration: underline;
     color: #F75E05;
 }

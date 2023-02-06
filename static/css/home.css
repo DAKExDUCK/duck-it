@@ -1,19 +1,18 @@
-
-header{
+header {
     display: block;
     height: 100vh;
     background: linear-gradient(55.95deg, #f9c8a6 0%, #FFD8B3 100%);
 
 }
 
-.header_content_main{
+.header_content_main {
     height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.header_text{
+.header_text {
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
@@ -22,13 +21,13 @@ header{
     flex-direction: column;
 }
 
-.main_text{
+.main_text {
     font-size: 64px;
     font-weight: bold;
     text-align: center;
 }
 
-.explore_course{
+.explore_course {
     width: 200px;
     height: 52px;
     background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
@@ -42,13 +41,13 @@ header{
 }
 
 
-.statistics{
+.statistics {
     height: 120px;
-    
+
 }
 
 .statistics,
-.statistic{
+.statistic {
     padding-bottom: 0;
     display: flex;
     flex-direction: row;
@@ -56,22 +55,22 @@ header{
     align-items: center;
 }
 
-.statistic h1{
+.statistic h1 {
     font-size: 46px;
 }
 
-.statistic h2{
+.statistic h2 {
     padding-left: 12px;
     font-size: 16px;
 }
 
-.dot{
+.dot {
     font-size: 50px;
-    margin-right:70px;
+    margin-right: 70px;
     color: #F75E05;
 }
 
-.recently{
+.recently {
     width: 100%;
     height: 600px;
     margin-top: 80px;
@@ -79,22 +78,22 @@ header{
     overflow: hidden;
 }
 
-.post_card{
+.post_card {
     height: 507px;
     width: 30%;
 }
 
-.recent_blogs{
+.recent_blogs {
     padding-top: 40px;
     display: flex;
     flex-direction: row;
-    
+
     align-content: flex-start;
     justify-content: space-between;
     height: 100%;
 }
 
-.card_image{
+.card_image {
     height: 300px;
     width: 390px;
     left: 0px;
@@ -102,25 +101,25 @@ header{
     border-radius: 4px;
 }
 
-.card_date h1{
+.card_date h1 {
     padding-top: 5px;
     font-size: 14px;
-    color:  #787A80;
+    color: #787A80;
     text-align: left;
 }
 
-.card_desc{
+.card_desc {
     text-align: left;
 }
 
-.card_desc h1{
+.card_desc h1 {
     font-weight: 700;
     font-size: 20px;
     padding-top: 10px;
 
 }
 
-.card_desc h2{
+.card_desc h2 {
     padding-top: 10px;
     font-size: 16px;
     color: #424551;
@@ -129,7 +128,7 @@ header{
 }
 
 
-.card_desc a{
+.card_desc a {
     display: block;
     padding-top: 10px;
     font-weight: 700;
@@ -137,30 +136,30 @@ header{
     color: #000;
 }
 
-.card_desc a:hover{
+.card_desc a:hover {
     text-decoration: underline;
     color: #F75E05;
 }
 
 
-.featured_course{
+.featured_course {
     display: flex;
     flex-direction: column;
     padding-top: 100px;
 }
 
-.featured_course_content{
+.featured_course_content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.courses_content_header{
+.courses_content_header {
     display: flex;
     justify-content: space-between;
 }
 
-.all_courses_btn{
+.all_courses_btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,27 +170,27 @@ header{
     border: 1px solid #F75E05;
     color: #F75E05;
     font-weight: 700;
-font-size: 16px;
+    font-size: 16px;
 }
 
-.all_courses_btn:hover{
+.all_courses_btn:hover {
     background-color: #F75E05;
     color: #fff;
     transition: all .4s ease;
     -webkit-transition: all .4s ease;
 }
 
-.course_header_text h3{
+.course_header_text h3 {
     font-size: 16px;
     color: #1E212C;
 }
 
-.course_header_text h1{
+.course_header_text h1 {
     font-weight: 900;
-font-size: 46px;
+    font-size: 46px;
 }
 
-.course_card{
+.course_card {
     width: 600px;
     height: 214px;
     display: flex;
@@ -201,20 +200,20 @@ font-size: 46px;
     margin-top: 20px;
 }
 
-.course_card_image{
+.course_card_image {
     height: 100%;
     width: 214px;
     border-radius: 3px;
 }
 
-.course_card_text{
+.course_card_text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 32px;
 }
 
-.course_level{
+.course_level {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -230,15 +229,15 @@ font-size: 46px;
     margin-top: 32px;
 }
 
-.course_title{
+.course_title {
     font-weight: 700;
-font-size: 20px;
-margin-top: 25px;
-line-height: 150%;
+    font-size: 20px;
+    margin-top: 25px;
+    line-height: 150%;
 }
 
 
-.bookmark{
+.bookmark {
     width: 20px;
     height: 20px;
     display: flex;
@@ -248,10 +247,10 @@ line-height: 150%;
     margin-right: 15px;
 }
 
-.testimonials{
+.testimonials {
     margin-top: 112px;
     display: flex;
-    
+
     text-align: center;
     height: 632px;
     flex-direction: column;
@@ -259,19 +258,19 @@ line-height: 150%;
 
 }
 
-.testimonials h1{
+.testimonials h1 {
     font-weight: 900;
     font-size: 46px;
     margin-top: 8px;
 }
 
-.testimonials h2{
+.testimonials h2 {
     font-weight: 700;
     font-size: 16px;
     margin-top: 18px;
 }
 
-.slider{
+.slider {
     display: flex;
     justify-content: center;
 }
@@ -290,50 +289,50 @@ line-height: 150%;
     align-items: center;
 }
 
-.review_container{
+.review_container {
     width: 80%;
     display: flex;
-    
+
     align-items: center;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.review_text{
+.review_text {
     font-size: 20px;
     line-height: 150%;
     color: #424551;
     width: 100%;
 }
 
-.review_author{
+.review_author {
     width: 243px;
     height: 72px;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 20px;
-   
+
 }
 
-.author_pfp{
+.author_pfp {
     width: 72px;
     height: 72px;
 
 }
 
-.author_data{
+.author_data {
     margin-left: 20px;
 }
 
-.author_name{
+.author_name {
     font-weight: 700;
     font-size: 16px;
     line-height: 160%;
     color: #1E212C;
 }
 
-.author_status{
+.author_status {
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;

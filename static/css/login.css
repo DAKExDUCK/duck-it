@@ -1,5 +1,3 @@
-
-
 body {
 	background: #f6f5f7;
 }
@@ -23,8 +21,8 @@ body {
 	margin-top: 15px;
 }
 
-form input:nth-child(2){
-    width: 284px;
+form input:nth-child(2) {
+	width: 284px;
 }
 
 .container_login span {
@@ -49,7 +47,7 @@ form input:nth-child(2){
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
-    margin-top:30px;
+	margin-top: 30px;
 }
 
 button:active {
@@ -86,21 +84,21 @@ input {
 .container_login {
 	background-color: #fff;
 	border-radius: 4px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
 	position: relative;
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+	margin-top: 150px;
+	margin-bottom: 150px;
 }
 
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .form-container {
@@ -135,12 +133,15 @@ input {
 }
 
 @keyframes show {
-	0%, 49.99% {
+
+	0%,
+	49.99% {
 		opacity: 0;
 		z-index: 1;
 	}
-	
-	50%, 100% {
+
+	50%,
+	100% {
 		opacity: 1;
 		z-index: 5;
 	}
@@ -157,7 +158,7 @@ input {
 	z-index: 100;
 }
 
-.container_login.right-panel-active .overlay-container{
+.container_login.right-panel-active .overlay-container {
 	transform: translateX(-100%);
 }
 
@@ -173,12 +174,12 @@ input {
 	left: -100%;
 	height: 100%;
 	width: 200%;
-  	transform: translateX(0);
+	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
 
 .container_login.right-panel-active .overlay {
-  	transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 .overlay-panel {
@@ -212,7 +213,3 @@ input {
 .container_login.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
-
-
-
-
