@@ -1,11 +1,47 @@
 {% extends "base.html" %}
-
-{% block content %}
-    <h1>Posts</h1>
-    {% for post in object_list %}
-        <ul>
-            <li><a href="{% url 'post' post.slug %}">{{ post.title }}</a></li>
-        </ul>
-    {% endfor %}
+{% load static %}
+{% block title %}
+<title>Courses</title>
 {% endblock %}
 
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" rel="noopener" href="{% static 'css/post_list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="post_list">
+        <div class="post_title">
+            <h3>OUR BLOG</h3>
+            <h1>DUCK<span style="color: #F75E05;">IT</span> DIALY</h1>
+            <div class="search">
+                <form>
+                    <input type="text" name="" placeholder="Type...">
+                    <button type="submit"><i class='bx bx-search'></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="posts">
+
+                    {% for post in object_list %}
+                    <div class="post_card">          
+                        <img class="card_image" src="{% static 'image/python.png' %}" alt="">
+                        <div class="card_date">
+                            <h1>{{ post.created_on }}</h1>
+                        </div>
+                        <div class="card_desc">
+                            <h1>{{ post.title }}</h1>
+                            <a class="card_read" href="{% url 'post' post.slug %}">Read More</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
