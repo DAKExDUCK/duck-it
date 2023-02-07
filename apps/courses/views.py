@@ -33,7 +33,7 @@ class LessonView(DetailView):
 
 def like_course(request, slug):
     user = request.user
-    if user is not AnonymousUser:
+    if user is AnonymousUser:
         data = {
             'status': 'info',
             'message': 'You must Sign in to use it'
@@ -58,7 +58,7 @@ def like_course(request, slug):
 
 def save_course(request, slug):
     user = request.user
-    if user is not AnonymousUser:
+    if user is AnonymousUser:
         data = {
             'status': 'info',
             'message': 'You must Sign in to use it'
