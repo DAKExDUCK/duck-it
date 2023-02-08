@@ -28,17 +28,14 @@
             </div>
             <div class="will_learn">
                 <div class="advantage_text">
-                    <h1>You will learn:</h1>
+                    <h1>Course plan:</h1>
                     <div class="advantage_text_list">
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry</h3>
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry</h3>
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry</h3>
-                        <h3><i class='bx bx-check-circle'></i>Lorem Ipsum is simply dummy text of the printing</h3>
+                        {% for lesson in object.lessons.all %}
+                            <h3 style="cursor: pointer;" onclick="window.location='{% url "lesson" object.slug lesson.slug %}';">
+                                <i class='bx bx-check-circle'></i>
+                                {{ lesson.title }}
+                            </h3>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -46,44 +43,23 @@
         <div class="course_join_block">
             <div class="course_image"><img src="{% static 'image/course_image.png' %}" alt="">
                 <div class="join_button">
-                    <a href="{% url 'courses' %}">
-                        <div class="join">Join the course</div>
+                    {% if object.lessons.all|length > 0 %}
+                    <a href="{% url 'lesson' object.slug object.lessons.all.0.slug %}">
+                    {% else %}
+                    <a href="{% url 'course' object.slug %}">
+                    {% endif %}
+                        <div class="join">Start the course</div>
                     </a>
-                    <button class="like" onclick="send_req('{% url 'like_course' object.slug %}', 'POST')"><i
-                            class='bx bxs-like'></i></button>
-                    <button class="save" onclick="send_req('{% url 'save_course' object.slug %}', 'POST')"><i
-                            class='bx bxs-bookmark-star'></i></button>
+                    <button class="like" onclick="send_req('{% url 'like_course' object.slug %}', 'POST')">
+                        <i class='bx bxs-like'></i>
+                    </button>
+                    <button class="save" onclick="send_req('{% url 'save_course' object.slug %}', 'POST')">
+                        <i class='bx bxs-bookmark-star'></i>
+                    </button>
                 </div>
 
             </div>
         </div>
     </div>
-    <script>
-        function like_course() {
-            $.ajax({
-                type: "POST",
-                url: "{% url 'like_course' object.slug %}",
-                data: {
-                    "csrfmiddlewaretoken": "{{csrf_token}}",
-                },
-                success: function (data) {
-                    alert(data['message'], data['status'])
-                }
-            });
-        }
-
-        function save_course() {
-            $.ajax({
-                type: "POST",
-                url: "{% url 'save_course' object.slug %}",
-                data: {
-                    "csrfmiddlewaretoken": "{{csrf_token}}",
-                },
-                success: function (data) {
-                    alert(data['message'], data['status'])
-                }
-            });
-        }
-
-    </script>
-    {% endblock %}
+</div>
+{% endblock %}

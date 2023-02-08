@@ -79,15 +79,15 @@
         <div class="featured_course_content">
 
             {% for course in courses %}
-            <div class="course_card" style="cursor: pointer;" onclick="window.location='{% url " course" course.slug
-                %}';">
+            <div class="course_card" style="cursor: pointer;" onclick="window.location='{% url "course" course.slug %}';">
                 <img class="course_card_image" src="{% static 'image/JavaScript.png' %}" alt="">
                 <div class="course_card_text">
                     <a href="" class="course_level">Beginner</a>
-                    <a href="{% url "course" course.slug %}" class="course_title">{{ course.title }}</a>
+                    <p class="course_title">{{ course.title }}</p>
                 </div>
-                <a class="bookmark" onclick="send_req('{% url 'save_course' course.slug %}', 'POST')"><img
-                        src="{% static 'icons/bookmark-white.png' %}" alt=""></a>
+                <a class="bookmark" onclick="send_req('{% url 'save_course' course.slug %}', 'POST')">
+                    <img src="{% static 'icons/bookmark-white.png' %}" alt="">
+                </a>
             </div>
             {% endfor %}
         </div>
