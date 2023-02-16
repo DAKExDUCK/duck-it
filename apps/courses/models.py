@@ -16,7 +16,7 @@ STATUS = (
 class Course(models.Model):
     title = models.CharField(max_length=200, unique=True)
     desc = models.CharField(max_length=2000, default="")
-
+    
     slug = models.SlugField(null=False, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='courses')
     updated_on = models.DateTimeField(auto_now=True)

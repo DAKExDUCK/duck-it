@@ -168,6 +168,117 @@ header {
     cursor: pointer;
 }
 
+.course_level {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.course_level h4 {
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 130%;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 72px;
+
+}
+
+.course_level_detail {
+    width: 1230px;
+    height: 126px;
+    border: 1px solid #E5E8ED;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    margin-top: 24px;
+}
+
+.course_level_detail h1 {
+    width: 57px;
+    font-weight: 900;
+    font-size: 48px;
+    color: #F75E05;
+    float: left;
+    margin-left: 40px;
+}
+
+.level_detail_text {
+    margin-left: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.level_detail_text h1 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    text-align: left;
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    height: 30px;
+}
+
+.level_detail_text h3 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #424551;
+    text-align: left;
+    width: 100%;
+}
+
+
+.level_button {
+    max-width: inherit;
+    width: 136px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: 0em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 40px;
+    transition: all 0.3s;
+}
+
+.level_join {
+    width: 136px;
+    height: 44px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #F75E05;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F75E05;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 44px;
+    transition: all 0.3s;
+}
+
+.course_level_detail:hover {
+    box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+    height: 160px;
+}
+
+.level_button:hover,
+.level_join:hover{
+    background: linear-gradient(55.95deg, #FF3F3A 0%, #F75E05 100%);
+    color: #fff;
+    
+}
+
+
+
+
 /* like,save onclick func
 .like,
 .save {

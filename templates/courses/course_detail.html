@@ -61,5 +61,32 @@
             </div>
         </div>
     </div>
+
+    <div class="course_level">
+        <h4>Start the course</h4>
+        {% for lesson in object.lessons.all %}
+        <div class="course_level_detail">
+            {% if lesson.order < 10 %}
+            <h1 class="level_counter">0{{ lesson.order }}</h1>
+            {% else %}
+            <h1 class="level_counter">{{ lesson.order }}</h1>
+            {% endif %}
+            <div class="level_detail_text">
+                <h1>{{ lesson.title }}</h1>
+                <h3>Onine master-class</h3>
+            </div>
+            <div class="level_button">
+                {% if object.lessons.all|length > 0 %}
+                <a href="{% url 'lesson' object.slug object.lessons.all.0.slug %}">
+                {% else %}
+                <a href="{% url 'course' object.slug %}">
+                {% endif %}
+                    <div class="level_join">Start the course</div>
+                </a>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
