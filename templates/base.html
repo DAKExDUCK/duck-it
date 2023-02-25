@@ -107,7 +107,8 @@
         </footer>
     </div>
     <script>
-        function send_req(url, type) {
+        function send_req(event, url, type) {
+            event.stopPropagation();
             $.ajax({
                 type: type,
                 url: url,
