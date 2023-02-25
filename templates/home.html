@@ -85,7 +85,7 @@
                     <a href="" class="course_level">Beginner</a>
                     <p class="course_title">{{ course.title }}</p>
                 </div>
-                <a class="bookmark" onclick="send_req('{% url 'save_course' course.slug %}', 'POST')">
+                <a class="bookmark" onclick="send_req(event, '{% url 'save_course' course.slug %}', 'POST')">
                     <img src="{% static 'icons/bookmark-white.png' %}" alt="">
                 </a>
             </div>
