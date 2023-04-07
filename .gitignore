@@ -1,5 +1,4 @@
 venv/
-Dockerfile
 .env
 .idea/
 fly.toml
